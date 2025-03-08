@@ -61,10 +61,20 @@ async def main():
     await app.run_polling()
 
 # Ejecutar el bot sin usar asyncio.run()
+import asyncio
+
 if __name__ == "__main__":
     import sys
 
     if sys.platform == "win32":
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
-    asyncio.run(main())
+    # Solución específica para Railway (Evita "event loop already running")
+    from telegram.ext import Application
+
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    
+    app = Application.builder().token(TOKEN).build()
+    
+    app.run_polling()
