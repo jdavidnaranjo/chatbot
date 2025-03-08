@@ -29,20 +29,20 @@ def button(update: Update, context: CallbackContext) -> None:
 
     if query.data == "admision":
         query.message.reply_text(
-            "📌 Proceso de Admisión\n\n"
-            "📅 Fechas de admisión: 18 de diciembre de 2024 hasta las 22h00 del 6 de enero de 2025.\n"
-            "📝 Fechas de evaluación: 25 al 27 de enero de 2025."
+            "📌 *Proceso de Admisión*\n\n"
+            "📅 *Fechas de admisión:* 18 de diciembre de 2024 hasta las 22h00 del 6 de enero de 2025.\n"
+            "📝 *Fechas de evaluación:* 25 al 27 de enero de 2025."
         )
 
     elif query.data == "nivelacion":
         query.message.reply_text(
-            "📚 Curso de Nivelación\n\n"
+            "📚 *Curso de Nivelación*\n\n"
             "El curso de nivelación es obligatorio para todos los aspirantes que han aceptado un cupo en la Universidad."
         )
 
     elif query.data == "contactos":
         query.message.reply_text(
-            "📍 Información de Contacto:\n"
+            "📍 *Información de Contacto:*\n"
             "📌 Dirección: Av. General Rumiñahui s/n y Ambato, Sangolquí – Ecuador\n"
             "📞 Teléfono: (593)23989-400 Ext 1401 – 1402\n"
             "📧 Correos:\n"
@@ -58,12 +58,12 @@ def button(update: Update, context: CallbackContext) -> None:
             [InlineKeyboardButton("💻 Modalidad en Línea", callback_data="en_linea")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        query.message.reply_text("🎓 Carreras que ofrece la Universidad. Seleccione una sede:", reply_markup=reply_markup)
+        query.message.reply_text("🎓 *Carreras que ofrece la Universidad.*\nSeleccione una sede:", reply_markup=reply_markup)
 
     elif query.data == "sangolqui":
         query.message.reply_text(
-            "📍 Sangolquí - Matriz\n\n"
-            "🎓 Carreras Presenciales:\n"
+            "📍 *Sangolquí - Matriz*\n\n"
+            "🎓 *Carreras Presenciales:*\n"
             "- Administración de Empresas\n"
             "- Ingeniería Agropecuaria\n"
             "- Biotecnología\n"
@@ -87,8 +87,8 @@ def button(update: Update, context: CallbackContext) -> None:
 
     elif query.data == "latacunga":
         query.message.reply_text(
-            "📍 Sede Latacunga\n\n"
-            "🎓 Carreras Presenciales:\n"
+            "📍 *Sede Latacunga*\n\n"
+            "🎓 *Carreras Presenciales:*\n"
             "- Contabilidad y Auditoría\n"
             "- Electromecánica\n"
             "- Electrónica y Automatización\n"
@@ -108,8 +108,8 @@ def button(update: Update, context: CallbackContext) -> None:
 
     elif query.data == "santo_domingo":
         query.message.reply_text(
-            "📍 Sede Santo Domingo\n\n"
-            "🎓 Carreras Presenciales:\n"
+            "📍 *Sede Santo Domingo*\n\n"
+            "🎓 *Carreras Presenciales:*\n"
             "- Ingeniería Agropecuaria\n"
             "- Biotecnología\n"
             "- Tecnologías de la Información"
@@ -117,8 +117,8 @@ def button(update: Update, context: CallbackContext) -> None:
 
     elif query.data == "en_linea":
         query.message.reply_text(
-            "💻 Modalidad en Línea\n\n"
-            "🎓 Carreras Disponibles:\n"
+            "💻 *Modalidad en Línea*\n\n"
+            "🎓 *Carreras Disponibles:*\n"
             "- Educación Inicial\n"
             "- Educación Básica\n"
             "- Turismo\n"
@@ -140,4 +140,3 @@ def run_bot():
 if __name__ == "__main__":
     bot_thread = threading.Thread(target=run_bot)
     bot_thread.start()
-
