@@ -1,5 +1,4 @@
 import os
-import threading
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, CallbackContext
 
@@ -50,8 +49,8 @@ def button(update: Update, context: CallbackContext) -> None:
             "   ✉️ asistencia.academica@espe.edu.ec"
         )
 
-# Función para iniciar el bot en un hilo separado
-def run_bot():
+# Función principal para iniciar el bot
+def main():
     app = ApplicationBuilder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
@@ -61,5 +60,4 @@ def run_bot():
     app.run_polling()
 
 if __name__ == "__main__":
-    bot_thread = threading.Thread(target=run_bot)
-    bot_thread.start()
+    main()
