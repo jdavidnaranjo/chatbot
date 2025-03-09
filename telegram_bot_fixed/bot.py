@@ -122,14 +122,14 @@ def button(update: Update, context: CallbackContext) -> None:
             "- Tecnologías de la Información"
         )
 
-# Función principal para ejecutar el bot
+# Función principal para ejecutar el bot sin async ni threading
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(button))
 
-    print("✅ Bot iniciado en Railway sin errores... 🚀")
+    print("✅ Bot iniciado correctamente en Railway/Heroku sin errores... 🚀")
     app.run_polling()
 
 if __name__ == "__main__":
